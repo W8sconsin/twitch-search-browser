@@ -1,0 +1,46 @@
+<html lang='en' class='no-js'>
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="twitch2.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+  </head>
+
+  <body ng-app="myApp" ng-controller="myCtrl">
+
+    <div class="se-pre-con"></div>
+
+    <div class="page-container">
+
+      <h1>Browse Twitch Streams</h1>
+      <p class="search">
+        <input type="text" id="search-input" placeholder="Enter a Twitch stream..."><br>
+        <button type="button">Search</button>
+        <hr>
+      </p>
+
+      <div class="results-container">
+        <table>
+          <tbody>
+            <th></th>
+            <tr>
+              <div style="text-align:center;" ng-repeat="res in results track by $index">
+                <div style="padding-bottom:2px;">{{res.row}}</div>
+                <div><img ng-src="{{res.preview}}"></div>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <footer>
+        <hr>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
